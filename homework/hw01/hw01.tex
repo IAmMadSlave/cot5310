@@ -1,0 +1,190 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+\parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\hmwkDueDate} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+}
+
+%----------------------------------------------------------------------------------------
+%   COLORS AND LANGUAGAGE
+%----------------------------------------------------------------------------------------
+
+\lstset{
+    frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep,language=Java,basicstyle=\ttfamily,
+    breaklines=true,columns=fullflexible,keepspaces=true,escapeinside={\%*}{*)}
+       }
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#1} % Assignment title
+\newcommand{\hmwkDueDate}{ Thursday,\ September\ 10,\ 2015} % Due date
+\newcommand{\hmwkClass}{COT\ 5310} % Course/class
+\newcommand{\hmwkClassTime}{6:15pm} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Bobadilla} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Musa V. Ahmed} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\belowcaptionskip=-10pt
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Solve Sipser exercises 0.3, 0.4, 0.5, and problem 0.10.
+
+    \vspace{5 mm}
+    0.3 
+    \begin{enumerate}[label=\alph*.]
+        \item No.
+        \item Yes.
+        \item ${x, y, z}$
+        \item ${x, y}$
+        \item ${xx, xy, yx, yy, zx, zy, xz, yz}$
+        \item ${{x,y}, {x}, {y}}$
+    \end{enumerate}
+
+    0.4 The cartesian product has $a*b$ elements. Since the cartesian product is $b$ ordered 
+    pairs for each of the $m$ elements.
+
+    0.5 There are $2^c$ elements in the power set of $C$. Since the subsets in the power set 
+    either include an element of $C$ or they do not then it holds that there are $2^|C|$ 
+    elements in the power set.
+
+    0.10 In the step where we divide both sides by $(a-b)$ if $a=b$ then $(a-b)=0$. This leads 
+    to a divide by zero error.
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    For a DFA, $M=(Q,\sum, \delta, q_0, F)$ in which the set of states is $Q=\{q_1, q_2, q_3, q_4, q_5\}$, 
+    $\sum = \{a, b\}$, $q_0=q_1$, $F=\{q_2, q_3, q_4, q_5\}$, and $\delta$ is specified by the table: \\
+
+    \begin{center}
+        \begin{tabular}{l | l | l | l | l | l}
+            \hline
+            $\delta$ & $q_1$ & $q_2$ & $q_3$ & $q_4$ & $q_5$ \\ \hline
+            a & $q_1$ & $q_3$ & $q_5$ & $q_2$ & $q_4$ \\ \hline
+            b & $q_2$ & $q_4$ & $q_1$ & $q_3$ & $q_5$ \\ \hline
+        \end{tabular}
+    \end{center}
+
+    Do the following:
+    \begin{enumerate}[label=(\alph*)]
+        \item Draw the state diagram of the DFA.
+        \item For the strings below, give the corresponding computation of the automaton 
+            and say whether it accepts or rejects them. The definition of computation 
+            is given in page 40.
+            \begin{enumerate}
+                \item baab
+                \item abbb
+                \item bbba
+            \end{enumerate}
+        \item Give a succinct English description of the string accepted by $M$.
+    \end{enumerate}
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    For each of the following languages give a state diagram of a DFA that recognize it. 
+    The alphabet is $\sum=\{0, 1\}$
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \{$w|w$ does not contain 000 or 11 as a substring\}
+        \item \{$w|w$ contain at least two 0's and at least two 1's\}. The 0's and 1's do not 
+            need to be consecutive.
+    \end{enumerate}
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Solve Sipser exercises 1.6b, 1.6d, 1.5c, 1.4c.
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

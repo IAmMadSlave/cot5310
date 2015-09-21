@@ -1,0 +1,168 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+\parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\hmwkDueDate} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+}
+
+%----------------------------------------------------------------------------------------
+%   COLORS AND LANGUAGAGE
+%----------------------------------------------------------------------------------------
+
+\lstset{
+    frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep,language=Java,basicstyle=\ttfamily,
+    breaklines=true,columns=fullflexible,keepspaces=true,escapeinside={\%*}{*)}
+       }
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Homework\ \#2} % Assignment title
+\newcommand{\hmwkDueDate}{ Thursday,\ September\ 22,\ 2015} % Due date
+\newcommand{\hmwkClass}{COT\ 5310} % Course/class
+\newcommand{\hmwkClassTime}{6:15pm} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Bobadilla} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Musa V. Ahmed} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\belowcaptionskip=-10pt
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Solve Sipser exercises (2nd edition) 1.7b, 1.7e, 1.16, 1.19, 1.21.
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Find an equivalent NFA for the following regular expression:\\ \\
+    $R=(0(10)^* \cup (1(0 \cup 1)^*)$
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    For the following languages, give a corresponding regular expression. The
+    languages are defined over the alphabet $\Sigma=\{a,b\}$    
+
+    \begin{enumerate}[label=\alph*.]
+        \item $A_1$: The set of all strings that contain "a" as a substring
+        \item $A_2$: The set of all strings that do not contain "bb" as a
+            substring
+        \item $A_3$: The set of all string whose length is exactly three.
+    \end{enumerate}
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Using the pumping lemma, prove that:\\ \\
+
+    $A_4 = \{w \in \Sigma^* |\  w\ contains\ more\ a's\ than\ b's\}$\\
+    with $\Sigma=\{a,b\}$, is not a regular language.
+
+
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+    Are the following languages regular? Prove your answers.
+
+    \begin{itemize}
+        \item $C_1 = \{a^pb^qa^{p=q} \in \Sigma^* |\ p \geq 0, q \geq 0\}$
+        \item $C_2 = \{a^{\dbinom{n}{s}} \in \Sigma^* |\ n \geq 2\}$
+    \end{itemize}
+\end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
